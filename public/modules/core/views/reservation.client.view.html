@@ -1,0 +1,25 @@
+<div id="reserve" class="row" data-ng-controller="ReservationController">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Make a reservation</h2>
+    <form class="col-md-12">
+      <label class="col-lg-12" for="first-name last-name"><strong>Name:</strong></label>
+      <input class="input-lg col-md-6" type="text" name="first-name" placeholder= "First"/><input class="input-lg col-md-6" type="text" name="last-name" placeholder="Last" />
+      <label class="col-lg-12" for="pop-type">Popcorn Preference</label>
+      <select class="form-control col-lg-12" name="pop-type">
+        <option value="plain">Plain</option>
+        <option value="kettle corn">Kettle Corn</option>
+        <option value="cheddar">Cheddar</option>
+        <option value="caramel">Caramel</option>
+      </select>
+      <label for="bowls">Bowls</label>
+      <div class="input-group spinner">
+        <input type="text" class="form-control" value="0">
+        <div class="input-group-btn-vertical">
+          <button ng-click="increment()" class="btn btn-default"><i class="fa fa-caret-up"></i></button>
+          <button ng-click="decrement()" class="btn btn-default"><i class="fa fa-caret-down"></i></button>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</div>
