@@ -1,0 +1,36 @@
+<div class="page-header">
+	<h2>Congratulations! You successfully made a reservation</h2>
+</div>
+{{reservat}}
+
+
+<section data-ng-controller="ReservationsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="reservation.bowls"></h1>
+		<h1>Bowls of:</h1>
+		<h1 data-ng-bind="reservation.popcorn"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user._id == reservation.user._id">
+	</div>
+	<small>
+		<em class="text-muted">
+			Reservation created
+			<span data-ng-bind="reservation.created | date:'longDate'"></span>
+			at 
+			<span data-ng-bind="reservation.created | date:'shortTime'"></span>
+			by
+			<span data-ng-bind="reservation.user.displayName"></span>
+		</em>
+	</small>
+	<p class="lead" data-ng-bind="reservation.content"></p>
+</section>
+
+
+<!-- 
+
+		<a class="btn btn-primary" href="/#!/reservations/{{reservation._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a> -->

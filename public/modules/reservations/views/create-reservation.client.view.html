@@ -1,0 +1,54 @@
+<section data-ng-controller="ReservationsController">
+	<div class="page-header">
+		<h2>Make a reservation</h2>
+	</div>
+	<div class="col-12">
+		<form name="reservationForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group" id="reserve" ng-class="{ 'has-error': reservationForm.title.$dirty && reservationForm.title.$invalid }">
+
+					<label class="col-lg-12" for="pop-type">Popcorn Preference</label>
+					<div class="controls">
+
+						<select class="form-control col-lg-12" name="pop-type" data-ng-model="popcorn">
+						  <option value="" disabled selected>Select your type!</option>
+	
+						  <option value="plain">Plain</option>
+						  <option value="kettle">Kettle Corn</option>
+						  <option value="cheddar">Cheddar</option>
+						  <option value="caramel">Caramel</option>
+						</select>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-12 control-label " for="bowls"># of Bowls</label>
+					<div class="controls">
+						<input name="bowls" data-ng-model="bowls" id="bowls" class="form-control" cols="30" rows="10" placeholder="Bowls"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+
+		</form>
+	</div>
+</section>
+				<!-- <div id="reserve" class="form-group row">
+				  <div class="col-md-6 col-md-offset-3">
+
+				      <label for="bowls">Bowls</label>
+				      <div class="input-group spinner">
+				        <input type="text" class="form-control" value="0">
+				        <div class="input-group-btn-vertical">
+				          <button ng-click="increment()" class="btn btn-default"><i class="fa fa-caret-up"></i></button>
+				          <button ng-click="decrement()" class="btn btn-default"><i class="fa fa-caret-down"></i></button>
+				        </div>
+				      </div>
+				     	
+				  </div>
+				</div>
