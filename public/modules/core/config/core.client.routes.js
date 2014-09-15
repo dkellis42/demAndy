@@ -18,10 +18,9 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			templateUrl: 'modules/core/views/login.client.view.html'
 		});
 		$stateProvider.
-		state('reserve', {
-			url: '/reserve',
-			templateUrl: 'modules/core/views/reservation.client.view.html',
-			controller: 'ReservationController'
+		state('payment', {
+			url: '/payment',
+			templateUrl: 'modules/core/views/payment.client.view.html'
 		});
 	}
 ]);
