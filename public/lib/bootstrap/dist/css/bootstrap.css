@@ -78,7 +78,7 @@ dfn {
 }
 
 /* line 133, ../../sass/_normalize.scss */
-h1 {
+h1, h1:hover, h1 a:hover {
   font-size: 2em;
   margin: 0.67em 0;
 }
@@ -317,13 +317,15 @@ th {
   /* line 53, ../../sass/_print.scss */
   p,
   h2,
+  h2 a:hover,
+  h2 a a:hover,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
   /* line 60, ../../sass/_print.scss */
-  h2,
+  h2, h2 a:hover, h2 a a:hover,
   h3 {
     page-break-after: avoid;
   }
@@ -1516,7 +1518,7 @@ hr {
 }
 
 /* line 9, ../../sass/_type.scss */
-h1, h2, h3, h4, h5, h6,
+h1, h1:hover, h1 a:hover, h2, h2 a:hover, h2 a a:hover, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1524,9 +1526,11 @@ h1, h2, h3, h4, h5, h6,
   color: inherit;
 }
 /* line 16, ../../sass/_type.scss */
-h1 small,
-h1 .small, h2 small,
-h2 .small, h3 small,
+h1 small, h1:hover small, h1 a:hover small,
+h1 .small,
+h1 a:hover .small, h2 small, h2 a:hover small,
+h2 .small,
+h2 a:hover .small, h3 small,
 h3 .small, h4 small,
 h4 .small, h5 small,
 h5 .small, h6 small,
@@ -1544,18 +1548,23 @@ h6 .small,
 }
 
 /* line 24, ../../sass/_type.scss */
-h1, .h1,
-h2, .h2,
+h1, h1:hover, h1 a:hover, .h1,
+h2,
+h2 a:hover,
+h2 a a:hover, .h2,
 h3, .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 /* line 30, ../../sass/_type.scss */
-h1 small,
-h1 .small, .h1 small,
+h1 small, h1:hover small, h1 a:hover small,
+h1 .small,
+h1 a:hover .small, .h1 small,
 .h1 .small,
 h2 small,
-h2 .small, .h2 small,
+h2 a:hover small,
+h2 .small,
+h2 a:hover .small, .h2 small,
 .h2 .small,
 h3 small,
 h3 .small, .h3 small,
@@ -1584,13 +1593,13 @@ h6 .small, .h6 small,
 }
 
 /* line 47, ../../sass/_type.scss */
-h1, .h1 {
+h1, h1:hover, h1 a:hover, .h1 {
   font-size: 84px;
 }
 
 /* line 48, ../../sass/_type.scss */
-h2, .h2 {
-  font-size: 37px;
+h2, h2 a:hover, h2 a a:hover, .h2 {
+  font-size: 42px;
 }
 
 /* line 49, ../../sass/_type.scss */
@@ -5993,7 +6002,7 @@ a.badge:hover, a.badge:focus {
   background-color: #eeeeee;
 }
 /* line 12, ../../sass/_jumbotron.scss */
-.jumbotron h1,
+.jumbotron h1, .jumbotron h1 a:hover, h1 .jumbotron a:hover,
 .jumbotron .h1 {
   color: inherit;
 }
@@ -6027,7 +6036,7 @@ a.badge:hover, a.badge:focus {
     padding-right: 60px;
   }
   /* line 43, ../../sass/_jumbotron.scss */
-  .jumbotron h1,
+  .jumbotron h1, .jumbotron h1 a:hover, h1 .jumbotron a:hover,
   .jumbotron .h1 {
     font-size: 63px;
   }
@@ -8077,8 +8086,7 @@ input, select {
   box-shadow: inset 0px 0px 5px #555;
   border: 1px solid #bbb;
 }
-
-/* line 39, ../../sass/custom.scss */
+/* line 38, ../../sass/custom.scss */
 input:focus, select:focus {
   outline: none;
   box-shadow: 0 0 4px #ccc;
@@ -8108,36 +8116,35 @@ input:focus, select:focus {
 }
 
 /* line 56, ../../sass/custom.scss */
-h1, h1 a, h1 a:hover {
+h1, h1:hover, h1 a:hover, h1 a, h1:hover a, h1 a:hover a {
   font-family: 'Vast Shadow', cursive;
+  color: white !important;
+  text-shadow: 1px 1px 5px #333;
+  text-transform: uppercase;
 }
 
-/* line 59, ../../sass/custom.scss */
-h1, h1 a, h1 a:hover, h2, h2 a, h2 a:hover {
+/* line 65, ../../sass/custom.scss */
+h2, h2 a:hover, h2 a a:hover, h2 a, h2 a:hover a {
   font-weight: lighter !important;
   color: white !important;
   text-shadow: 1px 1px 5px #333;
   text-transform: uppercase;
+}
+/* line 70, ../../sass/custom.scss */
+h2 a, h2 a:hover a, h2 a a, h2 a:hover a a {
   transition: all .2s ease-in-out;
 }
-
-/* line 66, ../../sass/custom.scss */
-a:hover h2 {
+/* line 72, ../../sass/custom.scss */
+h2 a:hover, h2 a a:hover a:hover, h2 a a:hover {
   transform: scale(1.2);
 }
 
-/* line 69, ../../sass/custom.scss */
+/* line 78, ../../sass/custom.scss */
 #login {
   text-align: center;
 }
 
-/* line 72, ../../sass/custom.scss */
-img.popcorn {
-  position: relative;
-  top: 100%;
-}
-
-/* line 76, ../../sass/custom.scss */
+/* line 82, ../../sass/custom.scss */
 #reserve input[type="text"] {
   background: none;
   border: none;
@@ -8145,34 +8152,43 @@ img.popcorn {
   box-shadow: none;
   border-radius: 0 !important;
 }
-
-/* line 83, ../../sass/custom.scss */
-#name-fields {
+/* line 89, ../../sass/custom.scss */
+#reserve label {
+  text-align: center;
+}
+/* line 91, ../../sass/custom.scss */
+#reserve label img {
+  max-width: 80px;
+  transition: all .2s ease-in-out;
+}
+/* line 99, ../../sass/custom.scss */
+#reserve input[type="radio"] {
+  display: none;
+}
+/* line 101, ../../sass/custom.scss */
+#reserve input[type="radio"]:checked + img {
+  transform: scale(1.2);
+}
+/* line 105, ../../sass/custom.scss */
+#reserve #name-fields {
   margin-bottom: 1rem;
   display: inline-block;
 }
 
-/* line 87, ../../sass/custom.scss */
+/* line 110, ../../sass/custom.scss */
 .spinner {
   width: 100px;
 }
-
-/* line 90, ../../sass/custom.scss */
-.spinner input {
-  text-align: right;
-}
-
-/* line 93, ../../sass/custom.scss */
-.input-group-btn-vertical {
+/* line 112, ../../sass/custom.scss */
+.spinner .input-group-btn-vertical {
   position: relative;
   white-space: nowrap;
   width: 1%;
   vertical-align: middle;
   display: table-cell;
 }
-
-/* line 100, ../../sass/custom.scss */
-.input-group-btn-vertical > .btn {
+/* line 118, ../../sass/custom.scss */
+.spinner .input-group-btn-vertical .btn {
   display: block;
   float: none;
   width: 100%;
@@ -8181,30 +8197,5 @@ img.popcorn {
   margin-left: -1px;
   position: relative;
   border-radius: 0;
-}
-
-/* line 110, ../../sass/custom.scss */
-.input-group-btn-vertical > .btn:first-child {
-  border-top-right-radius: 4px;
-}
-
-/* line 113, ../../sass/custom.scss */
-.input-group-btn-vertical > .btn:last-child {
-  margin-top: -2px;
-  border-bottom-right-radius: 4px;
-}
-
-/* line 117, ../../sass/custom.scss */
-.input-group-btn-vertical i {
-  position: absolute;
-  top: 0;
-  left: 4px;
-}
-
-/* line 122, ../../sass/custom.scss */
-#flake {
-  color: #fff;
-  position: absolute;
-  font-size: 25px;
-  top: -50px;
+  background: none !important;
 }
