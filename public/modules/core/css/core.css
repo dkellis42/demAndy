@@ -10,3 +10,7 @@
 .ng-valid.ng-dirty{
     border-color:#78FA89;
 }
+
+.black.black {
+	background-color: white;
+}
