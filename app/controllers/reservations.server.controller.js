@@ -6,7 +6,14 @@
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors'),
 	Reservation = mongoose.model('Reservation'),
+	nodemailer = require('nodemailer'),
+	config = require('../../config/config'),
+	crypto = require('crypto'),
+	User = mongoose.model('User'),
+	async = require('async'),
 	_ = require('lodash');
+
+
 
 /**
  * Create a reservation
@@ -22,6 +29,27 @@ exports.create = function(req, res) {
 			});
 		} else {
 			res.jsonp(reservation);
+			var transporter = nodemailer.createTransport(config.mailer.options);
+
+			// NB! No need to recreate the transporter object. You can use
+			// the same transporter object for all e-mails
+
+			// setup e-mail data with unicode symbols
+			var mailOptions = {
+					to: 'dkellis42@gmail.com',
+					from: 'demandandy@gmail.com',
+					subject: 'Reservation Made',
+					html: 'hello'
+			};
+
+			// send mail with defined transport object
+			transporter.sendMail(mailOptions, function(error, info){
+			    if(error){
+			        console.log(error);
+			    }else{
+			        console.log('Message sent: ' + info.response);
+			    }
+			});
 		}
 	});
 };
