@@ -74,7 +74,8 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
       });
     };
     $scope.submitForm = function(){
-    	$('input[type="submit"]').trigger('click');
+    	$('#reserve').submit();
+    	console.log('submitted');
     };
 	}
 ]);

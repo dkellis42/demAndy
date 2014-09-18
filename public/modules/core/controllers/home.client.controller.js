@@ -27,4 +27,12 @@ angular.module('core')
       controller: 'ReservationsController',
       transclude: true 
     };
-  });
+  })
+  .directive('status', function(){
+    return {
+      templateUrl: 'modules/reservations/views/status-reservation.client.view.html',
+      restrict: 'E',
+      controller: 'ReservationsController',
+      transclude: true 
+    };
+  })

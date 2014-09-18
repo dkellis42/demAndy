@@ -9,14 +9,14 @@
 			<h3>What's your name?</h3>
 			<input type="text" class="col-sm-6" ng-model="fname" placeholder="first"/>
 			<input type="text" class="col-sm-6" ng-model="lname" placeholder="last" />
-			<h2 ng-click="roll('.circle-text.second')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+			<h2 ng-show="fname && lname" ng-click="roll('.circle-text.second')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
 	</section>
 </div>
 <div class="circle-text third bottom">
 	<section class="popcorn-picker">
 		<h3>What kind of popcorn would you like?</h3>
       <label ng-click="pop()" class="col-lg-3">
-        <input name="popType" type="radio" ng-model="popType" value="plain">
+        <input name="pop-type" type="radio" ng-model="popType" value="plain">
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/popcorn.png">
         <h3><small>Plain</small></h3>
       </label>
@@ -35,14 +35,14 @@
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/caramel_corn.png">
         <h3><small>Caramel</small></h3>
       </label>
-      <h2 ng-click="roll('.circle-text.third')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+      <h2 ng-show="popType" ng-click="roll('.circle-text.third')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
 	</section>
 </div>
 <div class="circle-text bottom fourth">
 	<section>
 		<h3>How many bowls will satisfy your needs?</h3>
-	  <input type="text" ng-model="bowlnum" value="0">
-  	<h2 ng-click="roll('.circle-text.fourth')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+	  <input type="text" ng-model="bowlnum" placeholder="0" />
+  	<h2 ng-show"bowlnum" ng-click="roll('.circle-text.fourth')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
 	</section>
 </div>
 <div class="circle-text bottom fifth">
@@ -61,12 +61,12 @@
 		<h2 ng-click="submitForm()"><a href="#!"><span class="entypo-right-circled"></span> Submit</a></h2>
 	</section>
 </div>
-<form id="reserve" name="reservationForm" ng-show="showDetails" class="col-sm-12" data-ng-submit="create()" ng-class="{ 'has-error': reservationForm.title.$dirty && reservationForm.title.$invalid }" novalidate>
+<form id="reserve" name="reservationForm" class="col-sm-12" data-ng-submit="create()" ng-class="{ 'has-error': reservationForm.title.$dirty && reservationForm.title.$invalid }" novalidate>
 	<input type="text" class="col-sm-6" value="{{fname}}" name="firstName" placeholder="first"/>
 	<input type="text" class="col-sm-6" value="{{lname}}" placeholder="last" />
 	<input name="pop-type" type="radio" value="{{popType}}" data-ng-model="popcorn">
 	<input type="text" data-ng-model="bowls" value="{{bowlnum}}">
-	<input type="submit">
+	<input type="submit" class="submit">
 	<div data-ng-show="error" class="text-danger">
 		<strong data-ng-bind="error"></strong>
 	</div>
