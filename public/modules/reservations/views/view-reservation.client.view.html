@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="circle-text bottom">
 	<section data-ng-controller="ReservationsController" data-ng-init="findOne()">
 		<h2>Congratulations, {{reservat}} 
@@ -13,6 +14,40 @@
 		<h2><a href="#"><span class="entypo-right-circled"></span> View status</a></h2>
 	</section>
 </div>
+=======
+
+
+<section data-ng-controller="ReservationsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h2 data-ng-show="{{authentication.user.roles == admi}}">Congratulations! You successfully made a reservation</h2>
+		<h1 data-ng-bind="reservation.bowls"></h1>
+		<span data-ng-bind="authentication.user.roles.type">
+
+		<h1>Bowls of:</h1>
+		<h1 data-ng-bind="reservation.popcorn"></h1>
+	</div>
+
+
+	<div class="pull-right" data-ng-show="authentication.user._id != reservation.user._id">
+	</div>
+
+
+    <button ng-click="stripeIt()" id="customButton">Purchase</button>
+
+
+	<small>
+		<em class="text-muted">
+			Reservation created
+			<span data-ng-bind="reservation.created | date:'longDate'"></span>
+			at 
+			<span data-ng-bind="reservation.created | date:'shortTime'"></span>
+			by
+			<span data-ng-bind="reservation.user.displayName"></span>
+		</em>
+	</small>
+	<p class="lead" data-ng-bind="reservation.content"></p>
+</section>
+>>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
 
 
 <!-- 

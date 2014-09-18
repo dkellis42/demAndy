@@ -1,0 +1,406 @@
+/************
+VARIABLES
+************/
+$teal: #16908e;
+$tealtrans: rgba(22,144,142, .6);
+$orange: #ff5100;
+$orangetrans: rgba(255,81,0, .4);
+$lightblue: #00aeff;
+$red: #ff0004;
+$topcircleZ: translateZ(10em);
+$roll-final-state: $topcircleZ translateX(90%) rotate(100deg);
+$roll-out-start: translateZ(8em);
+$roll-out-end: translateZ(8em) translateX(90%) rotate(100deg);
+$popcorn: url("../images/popcorn.png");
+
+/***********
+BASE
+************/
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+body {
+  background: #fff;
+}
+ul {
+  list-style-type: none;
+  & li {@extend ul;}
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+.white {
+  color: #fff!important;
+}
+.content {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  margin-top: -2em;
+  background: $tealtrans;
+  min-height: 550px;
+}
+.row {
+  padding-bottom: 2rem;
+}
+.popcorn{
+  border-image: $popcorn 150 0 0 round;
+  border-top: 42px!important;
+}
+header {
+  background: url('../images/5.jpg');
+  background-attachment: fixed;
+  background-position: center 45%;
+  background-size: cover;
+  padding-bottom: 2em;
+}
+.social-login a [class*="entypo-"] {
+  height: 5rem;
+  font-size: 3rem;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  width: 5rem;
+  line-height: 4rem;
+  padding-top: 0.3rem;
+  border-radius: 100%;
+  transition: all .5s ease-in-out;
+  &:hover {
+    color: transparent;
+    text-shadow: 0 0 3px #fff;
+  }
+}
+.signin {
+  button {
+    background: none;
+    border: none;
+  }
+  small {
+    color: white;
+  }
+}
+input {
+  background: none!important;
+    border: 1px solid $teal;
+    box-shadow: none;
+    border-radius: 0!important;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+  &:focus {
+    outline: none;
+  }
+}
+::-webkit-input-placeholder {
+   color: #ddd;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #ddd;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ddd;  
+}
+:-ms-input-placeholder {
+   color: #ddd;
+}
+h1, h1 a {
+  font-family: 'Ostrich Bold', sans;
+  color: #16908e!important;
+  text-transform: uppercase;
+  &:hover {
+    @extend h1;
+  }
+}
+h2, h2 a {
+  font-family: 'Ostrich Heavy', sans;
+  color: white!important;
+  //text-shadow: 1px 1px 5px #333;
+  text-transform: uppercase;
+  a{
+    transition: all .2s ease-in-out;
+    &:hover {
+      @extend h2;
+      transform: scale(1.2);
+    }
+  }
+}
+nav {
+  background: $orange!important;
+  li {
+    a {
+      color: white;
+      text-shadow: none;
+    }
+  }
+}
+#login {
+  width: 86%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  margin: 0 auto;
+  padding-top: 16%;
+  color: $teal!important;
+  h2 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 28px;
+    color: $teal!important;
+    small {
+      display: block;
+      width: 100%;
+      float: left;
+      color: $teal!important;
+    }
+  }
+  div {
+    padding-top: 0!important;
+  }
+  button {
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-weight: lighter;
+  }
+}
+#reserve {
+  display: none;
+  input[type="text"] {
+    background: none!important;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    border-radius: 0!important;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  li {
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+  }
+  h3 {
+    color: #444;
+    small {
+      font-size: 1.7rem;
+      font-weight: lighter;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+  }
+}
+.popcorn-picker {
+  label {
+    text-align: center;
+    margin: 3rem 0;
+    img {
+      max-width: 80px;
+      transition: all .2s ease-in-out;
+      &:hover { 
+        //transform:scale(1.2);
+      }
+    }
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked + img {
+      animation: pop .5s ease;
+    }
+  }
+}
+.reservation {
+  input[type="text"]{
+    border: 0;
+    border-bottom: 3px solid $teal;
+    margin: 3rem 0;
+  }
+}
+/**************
+Rolling Circle
+***************/
+.circle-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.circle-text {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1rem;
+  left: 0;
+  right: 0;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    background: $teal; 
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
+  }
+  div {
+    float: left;
+    width: 100%;
+    padding-top: 20%;
+    line-height: 0.8rem;
+    //margin-top: -0.5rem;
+    text-align: center;
+    color: white;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &.top {
+    -webkit-transform: $topcircleZ;
+    -moz-transform: $topcircleZ;
+    -o-transform: $topcircleZ;
+    transform: $topcircleZ;
+    position: absolute;
+    &.roll-add {
+      -webkit-animation: roll 3s ease;
+      -moz-animation: roll 3s ease;
+      -o-animation: roll 3s ease;
+      animation: roll 3s ease;
+      transform: $roll-final-state!important;
+    }
+  }
+  &.bottom {
+    position: absolute;
+    padding-top: 0;
+    //&:nth-child(1){position: relative!important;}
+    @for $i from 0 to 10 {
+      $tranZ: translateZ(#{9-$i}em);
+      &:nth-child(#{$i}){
+         -webkit-transform: $tranZ translateX(1em);
+         -moz-transform: $tranZ translateX(1em);
+         -o-transform: $tranZ translateX(1em);
+         transform: $tranZ translateX(1em);
+      }
+    }
+    &.status {
+      h1 {
+        line-height: .8rem;
+      }
+      div {
+        padding-top: 0!important;
+      }
+    }
+    .small {
+      width: 20%;
+      padding-top: 0!important;
+      margin-right: 4.5%;
+      margin-bottom: 5%;
+      &:after{
+        background: url('../../../../modules/core/img/kernel.png') no-repeat $teal;
+        background-size: 80%;
+        background-position: center;
+      }
+    }
+    &.login:after {background: $orangetrans!important;}
+    &.roll-add {
+      -webkit-animation: rollout 3s ease forwards;
+      -moz-animation: rollout 3s ease forwards;
+      -o-animation: rollout 3s ease forwards;
+      animation: rollout 3s ease forwards;
+      //transform: $roll-final-state!important;
+    }
+    &:after {background: $orange!important;}
+    section {
+      width: 86%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: inline-block;
+      margin: 0 auto;
+      padding-top: 16%;
+      color: $teal!important;
+      h2 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-size: 28px;
+        color: $teal!important;
+        small {
+          display: block;
+          width: 100%;
+          float: left;
+          color: $teal!important;
+        }
+      }
+    }
+  }
+}
+#map-canvas {
+  height: 400px;
+  width: 100%;
+}
+/*********************
+ANIMATIONS
+**********************/
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  50% {
+    transform: scale(0.5) rotate(-10deg);
+  }
+  75% {
+    transform: scale(0) rotate(0);
+  }
+}
+@mixin rollframes {
+  from {
+    transform: translateZ(10em);
+  }
+  to {
+    transform: $roll-final-state;
+  }
+}
+
+@mixin rolloutframes {
+  from {
+    transform: translateZ(8em);
+  }
+  to {
+    transform: $roll-out-end;
+  }
+}
+@keyframes rollout {
+  @include rolloutframes
+}
+@-webkit-keyframes rollout {
+  @include rolloutframes
+}
+@-moz-keyframes rollout {
+  @include rolloutframes
+}
+@-o-keyframes rollout {
+  @include rolloutframes
+}
+
+@keyframes roll {
+  @include rollframes
+}
+@-webkit-keyframes roll {
+  @include rollframes
+}
+@-moz-keyframes roll {
+  @include rollframes
+}
+@-o-keyframes roll {
+  @include rollframes
+}

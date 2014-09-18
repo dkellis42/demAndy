@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div data-ng-controller="HomeController">		
 	<div class="circle-text top roll-in">
 			<div>
@@ -7,6 +8,19 @@
 			    <h2 ui-route="/signin" data-ng-hide="authentication.user" ng-click="roll('.circle-text.top')" ng-class="{active: $uiRoute}"><a href="/#!"><span class="entypo-right-circled"></span> Sign In</a></h2>
 			    <h2 ui-route="/reserve" data-ng-show="authentication.user" ng-click="roll('.circle-text.top')"  ng-class="{active: $uiRoute}"><a href="/#!"><span class="entypo-right-circled"></span> Get some.</a></h2>
 			</div>
+=======
+<section data-ng-controller="HomeController">
+	<div>
+		<div class="row">
+		  <div class="col-lg-8 col-lg-offset-3">
+		    <h2>You want <strong>popcorn</strong>.</h2>
+		    <h2>You want it <u>now</u>.</h2>
+		    <h2>You want <strong>Andy</strong> to make it for you.</h2>
+		    <h2 ui-route="/signin" data-ng-hide="authentication.user" ng-class="{active: $uiRoute}"><a href="#!/signin"><span class="entypo-right-circled"></span> Sign In</a></h2>
+		    <h2 ui-route="/reserve" data-ng-show="authentication.user" ng-class="{active: $uiRoute}"><a href="#!/reservations/create"><span class="entypo-right-circled"></span> Get some.</a></h2>
+
+		  </div>
+>>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
 		</div>
 		<login data-ng-hide="authentication.user"></login>
 		<!-- <reserve class="reservation" data-ng-show="authentication.user"></reserve> -->

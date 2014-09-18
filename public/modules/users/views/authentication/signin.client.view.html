@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="circle-text bottom login">
 	<section id="login" data-ng-controller="AuthenticationController">
 		<h2 class="col-md-12 text-center">Sign in using your social accounts</h2>
@@ -44,3 +45,58 @@
 		  <h2><small><a href="#!/signup"><span class="entypo-right-circled"></span> Signup</small></h2>
 	</section>
 </div>
+=======
+<section id="login" class="row" data-ng-controller="AuthenticationController">
+	<h3 class="col-md-12 text-center">Sign in using your social accounts</h3>
+	<div class="col-md-12 text-center">
+		<a href="/auth/facebook" class="undecorated-link">
+			<img src="/modules/users/img/buttons/facebook.png">
+		</a>
+		<a href="/auth/twitter" class="undecorated-link">
+			<img src="/modules/users/img/buttons/twitter.png">
+		</a>
+		<a href="/auth/google" class="undecorated-link">
+			<img src="/modules/users/img/buttons/google.png">
+		</a>
+		<a href="/auth/linkedin" class="undecorated-link">
+			<img src="/modules/users/img/buttons/linkedin.png">
+		</a>
+		<a href="/auth/github" class="undecorated-link">
+			<img src="/modules/users/img/buttons/github.png">
+		</a>
+	</div>
+
+	<h3 class="col-md-12 text-center">Or</h3>
+	<div class="col-md-6 col-md-offset-3">
+		<form data-ng-submit="signin()" class="col-lg-12 input-group" autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+
+					<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+				</div>
+				<div class="form-group">
+
+					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+				</div>
+				<div class="text-center form-group">
+
+					<button type="submit">Sign in</button>	
+
+
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+				<div class "forgot-password">
+					<a href="/#!/password/forgot">Forgot your password?</a>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	  <h2><small><a href="#!/signup"><span class="entypo-right-circled"></span> Signup</a></small></h2>
+
+	</div>
+</section>
+>>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
