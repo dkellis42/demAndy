@@ -1,15 +1,8 @@
 'use strict';
 
-<<<<<<< HEAD
-angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$location', '$animate', 'Authentication', 'Reservations',
-	function($scope, $stateParams, $location, $animate, Authentication, Reservations) {
+angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$http', '$location', '$animate', 'Authentication', 'Reservations',
+	function($scope, $stateParams, $http, $location, $animate, Authentication, Reservations) {
 		$scope.authentication = Authentication;
-		console.log($scope.authentication)
-=======
-angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Reservations',
-	function($scope, $stateParams, $http, $location, Authentication, Reservations) {
-		$scope.authentication = Authentication;
->>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
 
 		$scope.create = function() {
 			console.log($scope.authentication.user.email)
@@ -19,22 +12,12 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 			});
 			reservation.$save(function(response) {
 				$location.path('reservations/' + response._id);
-<<<<<<< HEAD
-				console.log('you just saved a reservation')
-=======
-
->>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
 				$scope.popcorn = '';
 				$scope.bowls = 1;
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
 		};
-<<<<<<< HEAD
-=======
-		
->>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
-
 		$scope.remove = function(reservation) {
 			if (reservation) {
 				reservation.$remove();
@@ -69,7 +52,6 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 			$scope.reservation = Reservations.get({
 				reservationId: $stateParams.reservationId
 			});
-<<<<<<< HEAD
 		};
     $scope.increment = function(){
       console.log('increment ran!');
@@ -92,9 +74,6 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
     	$('#reserve').submit();
     	console.log('submitted');
     };
-=======
-			console.log($scope.reservation)
-		};
 
 		// Submit account id for reservation confirmation
 		$scope.submitReservation = function() {
@@ -114,7 +93,6 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 
 
 		$scope.stripeIt = function () {
-			console.log("blah fuck")
 			  var handler = StripeCheckout.configure({
 			    key: 'pk_test_IDokFv8Q9yQIRx0HQ5FweDf3',
 			    image: '',
@@ -135,22 +113,6 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 			  });
 
 
-		}
-
-		$scope.increment = function(){
-		  console.log('increment ran!');
-		  $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
 		};
-
-		$scope.decrement = function(){
-		  $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-		};
-
-		$scope.pop = function(){
-		  $('input[name="pop-type"]').parent().find('img').attr('src', 'modules/core/img/kernel.png');
-		  $img = $('input:checked').parent().find('img')
-		  $img.attr('src', $img.attr('data-alt-src'));
-		};
->>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
-	}
+	};
 ]);
