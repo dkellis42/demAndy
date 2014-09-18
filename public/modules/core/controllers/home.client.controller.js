@@ -8,9 +8,10 @@ angular.module('core')
   		$scope.authentication = Authentication;
       $scope.roll = function(element){
         $animate.addClass(element, 'roll-add', function(){
-          console.log('added class');
+          console.log('home added class');
         });
       };
+      //$animate.enter('.circle-container', '.container');
   	}
   ])
   .directive('login', function(){
@@ -22,6 +23,8 @@ angular.module('core')
   .directive('reserve', function(){
     return {
       templateUrl: 'modules/reservations/views/create-reservation.client.view.html',
-      restrict: 'E' 
+      restrict: 'E',
+      controller: 'ReservationsController',
+      transclude: true 
     };
   });

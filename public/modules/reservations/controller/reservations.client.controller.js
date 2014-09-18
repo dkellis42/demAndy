@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Reservations',
-	function($scope, $stateParams, $location, Authentication, Reservations) {
+angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$location', '$animate', 'Authentication', 'Reservations',
+	function($scope, $stateParams, $location, $animate, Authentication, Reservations) {
 		$scope.authentication = Authentication;
 		console.log($scope.authentication)
 
@@ -67,6 +67,14 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
       $('input[name="pop-type"]').parent().find('img').attr('src', 'modules/core/img/kernel.png');
       var $img = $('input:checked').parent().find('img')
       $img.attr('src', $img.attr('data-alt-src'));
+    };
+    $scope.roll = function(element){
+      $animate.addClass(element, 'roll-add', function(){
+        console.log('added class');
+      });
+    };
+    $scope.submitForm = function(){
+    	$('input[type="submit"]').trigger('click');
     };
 	}
 ]);

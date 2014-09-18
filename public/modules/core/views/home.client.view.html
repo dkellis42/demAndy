@@ -1,5 +1,5 @@
 <div data-ng-controller="HomeController">		
-	<div class="circle-text top">
+	<div class="circle-text top roll-in">
 			<div>
 			    <h2>You want <strong>popcorn</strong>.</h2>
 			    <h2>You want it <u>now</u>.</h2>
@@ -9,5 +9,5 @@
 			</div>
 		</div>
 		<login data-ng-hide="authentication.user"></login>
-		<reserve data-ng-controller="ReservationsController" data-ng-show="authentication.user"></reserve>
+		<reserve data-ng-show="authentication.user"></reserve>
 </div>

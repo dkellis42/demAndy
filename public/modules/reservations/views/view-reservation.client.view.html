@@ -1,29 +1,18 @@
-<div class="page-header">
-	<h2>Congratulations! You successfully made a reservation</h2>
-</div>
-{{reservat}}
-
-
-<section data-ng-controller="ReservationsController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h2 data-ng-bind="reservation.bowls"></h2>
-		<h2>Bowls of:</h2>
-		<h2 data-ng-bind="reservation.popcorn"></h2>
-	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == reservation.user._id">
-	</div>
-	<small>
-		<em class="text-muted">
-			Reservation created
-			<span data-ng-bind="reservation.created | date:'longDate'"></span>
-			at 
-			<span data-ng-bind="reservation.created | date:'shortTime'"></span>
-			by
+<div class="circle-text bottom">
+	<section data-ng-controller="ReservationsController" data-ng-init="findOne()">
+		<h2>Congratulations, {{reservat}} 
 			<span data-ng-bind="reservation.user.displayName"></span>
-		</em>
-	</small>
-	<p class="lead" data-ng-bind="reservation.content"></p>
-</section>
+			!
+		</h2> 
+		<hr class="popcorn" />
+		<h3 class="light">Your reservation request for</h3>
+		<h3 class="light"><span data-ng-bind="reservation.bowls"></span> bowls of 
+			<span data-ng-bind="reservation.popcorn"></span>
+		</h3>
+		<h3 class="light">has been submitted!</h3>
+		<h2><a href="#"><span class="entypo-right-circled"></span> View status</a></h2>
+	</section>
+</div>
 
 
 <!-- 
