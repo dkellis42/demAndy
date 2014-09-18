@@ -5,7 +5,8 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 		$scope.authentication = Authentication;
 
 		$scope.create = function() {
-			console.log($scope.authentication.user.email)
+			console.log("YOU CALLED ME?");
+
 			var reservation = new Reservations({
 				popcorn: this.popcorn,
 				bowls: this.bowls
@@ -71,8 +72,9 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
       });
     };
     $scope.submitForm = function(){
-    	$('#reserve').submit();
+    	$('#reserve.submit').click();
     	console.log('submitted');
+    	$scope.create();
     };
 
 		// Submit account id for reservation confirmation
@@ -114,5 +116,5 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 
 
 		};
-	};
+	}
 ]);
