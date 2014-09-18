@@ -67,6 +67,8 @@ exports.read = function(req, res) {
 exports.update = function(req, res) {
 	var reservation = req.reservation;
 
+	console.log(reservation.status)
+
 	reservation = _.extend(reservation, req.body);
 
 	reservation.save(function(err) {
@@ -116,7 +118,7 @@ exports.list = function(req, res) {
  * reservation middleware
  */
 exports.reservationByID = function(req, res, next, id) {
-	Reservation.findById(id).populate('user', 'displayName').exec(function(err, reservation) {
+	Reservation.findById(id).populate('user', 'roles').exec(function(err, reservation) {
 		if (err) return next(err);
 		if (!reservation) return next(new Error('Failed to load reservation ' + id));
 		req.reservation = reservation;
@@ -128,6 +130,10 @@ exports.reservationByID = function(req, res, next, id) {
  * reservation authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
+	if (req.user.roles[0] == "admin") {
+		return next();
+	}
+
 	if (req.reservation.user.id !== req.user.id) {
 		return res.status(403).send({
 			message: 'User is not authorized'

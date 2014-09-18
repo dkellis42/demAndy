@@ -12,7 +12,7 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 			});
 			reservation.$save(function(response) {
 				$location.path('reservations/' + response._id);
-				console.log('you just saved a reservation')
+
 				$scope.popcorn = '';
 				$scope.bowls = 1;
 			}, function(errorResponse) {
@@ -55,6 +55,7 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 			$scope.reservation = Reservations.get({
 				reservationId: $stateParams.reservationId
 			});
+			console.log($scope.reservation)
 		};
 
 		// Submit account id for reservation confirmation

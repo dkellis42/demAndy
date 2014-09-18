@@ -1,20 +1,19 @@
-<section data-ng-controller="reservationsController" data-ng-init="find()">
+<section data-ng-controller="ReservationsController" data-ng-init="find()">
 	<div class="page-header">
 		<h1>Reservations</h1>
 	</div>
 	<div class="list-group">
-		<a data-ng-repeat="reservation in reservations" data-ng-href="#!/reservations/{{reservation._id}}" class="list-group-item">
+		<a data-ng-repeat="reservation in reservations" data-ng-href="#!/reservations/{{reservation._id}}/edit" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
-				<span data-ng-bind="reservation.created | date:'mediumDate'"></span>
+				<span data-ng-bind="reservation.created | date:'longDate'"></span>
 				by
 				<span data-ng-bind="reservation.user.displayName"></span>
+				Status: 
+				<span data-ng-bind="reservation.status"></span>
 			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="reservation.title"></h4>
-			<p class="list-group-item-text" data-ng-bind="reservation.content"></p>
+			<h4 class="list-group-item-heading" data-ng-bind="article.popcorn"></h4>
+			<p class="list-group-item-text" data-ng-bind="article.bowls"></p>
 		</a>
-	</div>
-	<div class="alert alert-warning text-center" data-ng-if="reservations.$resolved && !reservations.length">
-		No reservations yet, why don't you <a href="/#!/reservations/create">create one</a>?
 	</div>
 </section>

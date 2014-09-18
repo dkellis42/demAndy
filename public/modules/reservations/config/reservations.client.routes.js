@@ -20,6 +20,15 @@ angular.module('reservations').config(['$stateProvider',
 		state('payReservation', {
 			url: '/reservations/:reservationId/pay',
 			templateUrl: 'modules/reservations/views/pay-reservation.client.view.html'
+		}).
+		state('updateReservation', {
+			url: '/reservations/:reservationId/edit',
+			templateUrl: 'modules/reservations/views/update-reservation.client.view.html'
+		}).
+		state('successfulUpdate', {
+			url: '/reservations/:reservationId/edit/success',
+			templateUrl: 'modules/reservations/views/update-success.client.view.html'
 		});
+
 	}
 ]);

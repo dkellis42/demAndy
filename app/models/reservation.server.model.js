@@ -25,9 +25,10 @@ var ReservationSchema = new Schema({
 		// default: 1,
 		required: 'Number of bowls must be specified'
 	},
-	accepted: {
-		type: Boolean,
-		default: null
+	status: {
+		type: String,
+		default: 'pending',
+		trim: true
 	},
 	user: {
 		type: Schema.ObjectId,
