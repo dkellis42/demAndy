@@ -11,6 +11,34 @@
 	</div>
 	<div class="pull-right" data-ng-show="authentication.user._id == reservation.user._id">
 	</div>
+	<div class="span4">
+	    <p class="text-info">
+
+	    <br/><br/>
+
+	    <p class="text-info">
+	        <button
+	            class="btn btn-block btn-primary"
+	            data-ng-click="checkoutPayPal()"
+	            <i class="icon-ok icon-white" /> check out using PayPal
+	        </button>
+	        <button 
+	            class="btn btn-block btn-primary" 
+	            ng-click="checkoutGoogle()" 
+	            <i class="icon-ok icon-white" /> check out using Google
+	        </button>
+	        <button 
+	            class="btn btn-block btn-primary" 
+	            ng-click="checkoutStripe()" 
+	            <i class="icon-ok icon-white" /> check out using Stripe
+	        </button>
+	    </p>
+	        <!-- Stripe needs a form to post to -->
+	        <form class="form-stripe"></form>
+
+	    <br/><br/>
+	</div>
+
 	<small>
 		<em class="text-muted">
 			Reservation created

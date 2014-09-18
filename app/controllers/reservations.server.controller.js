@@ -39,7 +39,7 @@ exports.create = function(req, res) {
 					to: 'dkellis42@gmail.com',
 					from: 'demandandy@gmail.com',
 					subject: 'Reservation Made',
-					html: 'hello'
+					html: 'YOU HAVE MADE A RESERVATION'
 			};
 
 			// send mail with defined transport object

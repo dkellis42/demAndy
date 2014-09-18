@@ -17,9 +17,9 @@ angular.module('reservations').config(['$stateProvider',
 			url: '/reservations/:reservationId',
 			templateUrl: 'modules/reservations/views/view-reservation.client.view.html'
 		}).
-		state('editReservation', {
-			url: '/reservations/:reservationId/edit',
-			templateUrl: 'modules/reservations/views/edit-reservation.client.view.html'
+		state('payReservation', {
+			url: '/reservations/:reservationId/pay',
+			templateUrl: 'modules/reservations/views/pay-reservation.client.view.html'
 		});
 	}
 ]);
