@@ -1,5 +1,8 @@
 {% extends 'layout.server.view.html' %}
 
 {% block content %}
-	<section data-ui-view ng-view></section>
+  <section class="col-lg-10 col-lg-offset-1">
+    <div class="circle-container" data-ui-view ng-view> 
+    </div>
+  </section>
 {% endblock %}

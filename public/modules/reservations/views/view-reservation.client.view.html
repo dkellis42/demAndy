@@ -6,9 +6,9 @@
 
 <section data-ng-controller="ReservationsController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1 data-ng-bind="reservation.bowls"></h1>
-		<h1>Bowls of:</h1>
-		<h1 data-ng-bind="reservation.popcorn"></h1>
+		<h2 data-ng-bind="reservation.bowls"></h2>
+		<h2>Bowls of:</h2>
+		<h2 data-ng-bind="reservation.popcorn"></h2>
 	</div>
 	<div class="pull-right" data-ng-show="authentication.user._id == reservation.user._id">
 	</div>
