@@ -33,6 +33,17 @@ a {
     text-decoration: none;
   }
 }
+table {
+  text-align: left;
+  tr {
+    &:nth-child(even){
+      background: $tealtrans;
+    }
+    &:nth-child(odd){
+      background: $orangetrans;
+    }
+  }
+}
 .white {
   color: #fff!important;
 }

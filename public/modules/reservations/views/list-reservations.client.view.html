@@ -1,21 +1,20 @@
-<div class="circle-text bottom">
-	<section data-ng-controller="ReservationsController" data-ng-init="find()">
-		<div class="page-header">
-			<h1>Reservations</h1>
-		</div>
-		<div class="list-group">
-			<a data-ng-repeat="reservation in reservations" data-ng-href="#!/reservations/{{reservation._id}}/edit" class="list-group-item">
-				<small class="list-group-item-text">
-					Posted on
-					<span data-ng-bind="reservation.created | date:'longDate'"></span>
-					by
-					<span data-ng-bind="reservation.user.displayName"></span>
-					Status: 
-					<span data-ng-bind="reservation.status"></span>
-				</small>
-				<h4 class="list-group-item-heading" data-ng-bind="article.popcorn"></h4>
-				<p class="list-group-item-text" data-ng-bind="article.bowls"></p>
-			</a>
-		</div>
-	</section>	
-</div>
+<section data-ng-controller="ReservationsController" data-ng-init="find()">
+	<h1><small>Reservations</small></h1>
+	</div>
+	<table class="col-sm-12">
+		<tr>
+			<th>Date Created</th>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Type</th>
+			<th>Bowls</th>
+		</tr>
+		<tr data-ng-repeat="reservation in reservations" data-ng-href="#!/reservations/{{reservation._id}}/edit">
+			<td>{{reservation.created | date:'longDate'}}</td>
+			<td>{{reservation.user.displayName}}</td>
+			<td>{{reservation.status}}</td>
+			<td>{{reservation.popcorn}}</td>
+			<td>{{reservation.bowls}}</td>
+		</tr>
+	</div>
+</section>

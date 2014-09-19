@@ -30,6 +30,30 @@ var ReservationSchema = new Schema({
 		default: 'pending',
 		trim: true
 	},
+	name: {
+		first: {
+			type: String,
+			trim: true
+		},
+		last: {
+			type: String,
+			trim: true
+		}
+	},
+	address: {
+		street: {
+			type: String,
+			trim: true
+		},
+		city: {
+			type: String,
+			trim: true
+		},
+		state: {
+			type: String,
+			trim: true
+		}
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

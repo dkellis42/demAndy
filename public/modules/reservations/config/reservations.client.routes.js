@@ -11,7 +11,8 @@ angular.module('reservations').config(['$stateProvider',
 		}).
 		state('createReservation', {
 			url: '/reservations/create',
-			templateUrl: 'modules/reservations/views/create-reservation.client.view.html'
+			templateUrl: 'modules/reservations/views/create-reservation.client.view.html',
+			controller: 'ReservationsController'
 		}).
 		state('viewReservation', {
 			url: '/reservations/:reservationId',

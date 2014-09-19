@@ -1,20 +1,33 @@
 'use strict';
 
-angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$http', '$location', '$animate', 'Authentication', 'Reservations',
-	function($scope, $stateParams, $http, $location, $animate, Authentication, Reservations) {
+angular.module('reservations').controller('ReservationsController', ['$scope', '$stateParams', '$http', '$location', '$timeout', '$animate', 'Authentication', 'Reservations',
+	function($scope, $stateParams, $http, $location, $timeout, $animate, Authentication, Reservations) {
 		$scope.authentication = Authentication;
 
 		$scope.create = function() {
-			console.log($scope.authentication.user.email)
+			console.log("YOU CALLED ME?");
+
 			var reservation = new Reservations({
+				name: {
+					first: this.fname,
+					last: this.lname
+				},
 				popcorn: this.popcorn,
-				bowls: this.bowls
+				bowls: this.bowls,
+				address: {
+					street: this.street,
+					city: this.city,
+					state: this.state
+				}
 			});
+
 			reservation.$save(function(response) {
+				console.log(response)
 				$location.path('reservations/' + response._id);
 				$scope.popcorn = '';
 				$scope.bowls = 1;
 			}, function(errorResponse) {
+				console.log(response)
 				$scope.error = errorResponse.data.message;
 			});
 		};
@@ -70,11 +83,6 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
         console.log('added class');
       });
     };
-    $scope.submitForm = function(){
-    	$('#reserve').submit();
-    	console.log('submitted');
-    };
-
 		// Submit account id for reservation confirmation
 		$scope.submitReservation = function() {
 			$scope.success = $scope.error = null;
@@ -114,5 +122,5 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 
 
 		};
-	};
+	}
 ]);

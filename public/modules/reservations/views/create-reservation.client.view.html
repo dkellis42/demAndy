@@ -1,131 +1,64 @@
-<<<<<<< HEAD
+
 <div class="circle-text first bottom">
 	<section>
 		<h1><small>Make a reservation</small></h1>
-		<h2 ng-click="roll('.circle-text.first')"><a href="#!"><span class="entypo-right-circled"></span> Go</a></h2>
+		<h2 ng-click="roll('.circle-text.first')"><span class="entypo-right-circled"></span> Go</h2>
 	</section>
 </div>
 <div class="circle-text second bottom">
 	<section>
 			<h3>What's your name?</h3>
-			<input type="text" class="col-sm-6" ng-model="fname" placeholder="first"/>
-			<input type="text" class="col-sm-6" ng-model="lname" placeholder="last" />
-			<h2 ng-show="fname && lname" ng-click="roll('.circle-text.second')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+			<input type="text" class="col-sm-6" data-ng-model="fname" placeholder="first"/>
+			<input type="text" class="col-sm-6" data-ng-model="lname" placeholder="last" />
+			<h2 ng-show="fname && lname" ng-click="roll('.circle-text.second')"><span class="entypo-right-circled"></span> Next</h2>
 	</section>
 </div>
 <div class="circle-text third bottom">
 	<section class="popcorn-picker">
 		<h3>What kind of popcorn would you like?</h3>
       <label ng-click="pop()" class="col-lg-3">
-        <input name="pop-type" type="radio" ng-model="popType" value="plain">
+        <input name="pop-type" type="radio" data-ng-model="popcorn" value="plain">
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/popcorn.png">
         <h3><small>Plain</small></h3>
       </label>
 			<label ng-click="pop()" class="col-lg-3">
-        <input name="pop-type" type="radio" ng-model="popType" value="kettle corn">
+        <input name="pop-type" type="radio" data-ng-model="popcorn" value="kettle">
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/kettle_corn.png">
         <h3><small>Kettle</small></h3>
       </label>
       <label ng-click="pop()" class="col-lg-3">
-        <input name="pop-type" type="radio" ng-model="popType" value="cheddar">
+        <input name="pop-type" type="radio" data-ng-model="popcorn" value="cheddar">
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/kettle_corn.png">
         <h3><small>Cheddar</small></h3>
       </label>
       <label ng-click="pop()" class="col-lg-3">
-        <input name="pop-type" type="radio" ng-model="popType" value="caramel corn">
+        <input name="pop-type" type="radio" data-ng-model="popcorn" value="caramel">
         <img src="modules/core/img/kernel.png" data-alt-src="modules/core/img/caramel_corn.png">
         <h3><small>Caramel</small></h3>
       </label>
-      <h2 ng-show="popType" ng-click="roll('.circle-text.third')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+      <h2 ng-show="popcorn" ng-click="roll('.circle-text.third')"><span class="entypo-right-circled"></span> Next</h2>
 	</section>
 </div>
 <div class="circle-text bottom fourth">
 	<section>
 		<h3>How many bowls will satisfy your needs?</h3>
-	  <input type="text" ng-model="bowlnum" placeholder="0" />
-  	<h2 ng-show"bowlnum" ng-click="roll('.circle-text.fourth')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+	  <input type="text" ng-model="bowls" placeholder="0" />
+  	<h2 ng-show="bowls" ng-click="roll('.circle-text.fourth')"><span class="entypo-right-circled"></span> Next</h2>
 	</section>
 </div>
 <div class="circle-text bottom fifth">
 	<section>
 		<h3>Where is Andy going?</h3>
-		<input type="text" class="col-lg-12" type="text" placeholder="Street address"/>
-		<input type="text" class="col-sm-6" placeholder="city"/>
-		<input type="text" class="col-sm-6" placeholder="state"/>
-		<h2 ng-click="roll('.circle-text.fifth')"><a href="#!"><span class="entypo-right-circled"></span> Next</a></h2>
+		<input type="text" class="col-lg-12" data-ng-model="street" type="text" placeholder="Street address"/>
+		<input type="text" class="col-sm-6" data-ng-model="city" placeholder="city"/>
+		<input type="text" class="col-sm-6" data-ng-model="state" placeholder="state"/>
+		<h2 ng-click="roll('.circle-text.fifth')"><span class="entypo-right-circled"></span> Next</h2>
 	</section>
 </div>
 <div class="circle-text bottom">
 	<section>
 		<h3>Where should we send your confirmation?</h3>
 		<input type="text" placeholder="email" class="col-sm-12" />
-		<h2 ng-click="submitForm()"><a href="#!"><span class="entypo-right-circled"></span> Submit</a></h2>
+		<h2 ng-click="create()"><span class="entypo-right-circled"></span> Submit</h2>
 	</section>
 </div>
-<form id="reserve" name="reservationForm" class="col-sm-12" data-ng-submit="create()" ng-class="{ 'has-error': reservationForm.title.$dirty && reservationForm.title.$invalid }" novalidate>
-	<input type="text" class="col-sm-6" value="{{fname}}" name="firstName" placeholder="first"/>
-	<input type="text" class="col-sm-6" value="{{lname}}" placeholder="last" />
-	<input name="pop-type" type="radio" value="{{popType}}" data-ng-model="popcorn">
-	<input type="text" data-ng-model="bowls" value="{{bowlnum}}">
-	<input type="submit" class="submit">
-	<div data-ng-show="error" class="text-danger">
-		<strong data-ng-bind="error"></strong>
-	</div>
-</form>
-=======
-<section data-ng-controller="ReservationsController" id="reserve">
-	<div class="page-header">
-		<h2>Make a reservation</h2>
-	</div>
-	<div class="col-12">
-		<form name="reservationForm" class="form-horizontal" data-ng-submit="create()" novalidate>
-			<fieldset>
-				<div class="form-group" id="reserve" ng-class="{ 'has-error': reservationForm.title.$dirty && reservationForm.title.$invalid }">
-
-					<label class="col-lg-12" for="pop-type">Popcorn Preference</label>
-					<div class="controls">
-
-						<select class="form-control col-lg-12" name="pop-type" data-ng-model="popcorn">
-						  <option value="" disabled selected>Select your type!</option>
-	
-						  <option value="plain">Plain</option>
-						  <option value="kettle">Kettle Corn</option>
-						  <option value="cheddar">Cheddar</option>
-						  <option value="caramel">Caramel</option>
-						</select>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-12 control-label " for="bowls"># of Bowls</label>
-					<div class="controls">
-						<input name="bowls" data-ng-model="bowls" id="bowls" class="form-control" cols="30" rows="10" placeholder="Bowls"></input>
-					</div>
-				</div>
-				<div class="form-group">
-					<input type="submit" class="btn btn-default">
-				</div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
-			</fieldset>
-
-		</form>
-
-	</div>
-</section>
->>>>>>> b57aa7553dfc422965686a39e4ac730d71eea656
-				<!-- <div id="reserve" class="form-group row">
-				  <div class="col-md-6 col-md-offset-3">
-
-				      <label for="bowls">Bowls</label>
-				      <div class="input-group spinner">
-				        <input type="text" class="form-control" value="0">
-				        <div class="input-group-btn-vertical">
-				          <button ng-click="increment()" class="btn btn-default"><i class="fa fa-caret-up"></i></button>
-				          <button ng-click="decrement()" class="btn btn-default"><i class="fa fa-caret-down"></i></button>
-				        </div>
-				      </div>
-				     	
-				  </div>
-				</div>
