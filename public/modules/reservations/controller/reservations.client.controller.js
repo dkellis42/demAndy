@@ -11,11 +11,14 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
 				popcorn: this.popcorn,
 				bowls: this.bowls
 			});
+
 			reservation.$save(function(response) {
+				console.log(response)
 				$location.path('reservations/' + response._id);
 				$scope.popcorn = '';
 				$scope.bowls = 1;
 			}, function(errorResponse) {
+				console.log(response)
 				$scope.error = errorResponse.data.message;
 			});
 		};
@@ -72,9 +75,8 @@ angular.module('reservations').controller('ReservationsController', ['$scope', '
       });
     };
     $scope.submitForm = function(){
-    	$('#reserve.submit').click();
+    	$('.submit').click();
     	console.log('submitted');
-    	$scope.create();
     };
 
 		// Submit account id for reservation confirmation
