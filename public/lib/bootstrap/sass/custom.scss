@@ -307,14 +307,22 @@ Rolling Circle
       div {
         padding-top: 0!important;
       }
+      h2 {
+        letter-spacing: 1px;
+      }
     }
     .small {
       width: 20%;
       padding-top: 0!important;
       margin-right: 4.5%;
       margin-bottom: 5%;
-      &:after{
+      &.unpopped:after{
         background: url('../../../../modules/core/img/kernel.png') no-repeat $teal;
+        background-size: 80%;
+        background-position: center;
+      }
+      &.popped:after{
+        background: url('../../../../modules/core/img/popcorn.png') no-repeat $teal;
         background-size: 80%;
         background-position: center;
       }
@@ -341,12 +349,12 @@ Rolling Circle
         margin-top: 0;
         margin-bottom: .5rem;
         font-size: 28px;
-        color: $teal!important;
+        color: $teal;
         small {
           display: block;
           width: 100%;
           float: left;
-          color: $teal!important;
+          color: $teal;
         }
       }
     }

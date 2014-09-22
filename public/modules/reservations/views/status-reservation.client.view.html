@@ -1,12 +1,12 @@
 <div class="circle-text bottom status">
-  <section>
+  <section data-ng-init="findOne()">
     <h1><small>Reservation Status</small></h1>
     <div>
-      <div class="circle-text small"></div>
-      <div class="circle-text small"></div>
-      <div class="circle-text small"></div>
-      <div class="circle-text small"></div>
+      <div class="circle-text small popped"></div>
+      <div class="circle-text small" ng-class="{popped: reservation.status == ('confirmed' || 'inprogress' || 'completed'), unpopped: reservation.status == 'pending'}"></div>
+      <div class="circle-text small" ng-class="{popped: reservation.status == ('inprogress' || 'completed'), unpopped: (reservation.status == 'confirmed' || reservation.status == 'pending')}"></div>
+      <div class="circle-text small" ng-class="{popped: reservation.status == 'completed', unpopped: (reservation.status == 'pending') || (reservation.status == 'inprogress' )|| (reservation.status == 'confirmed')}"></div>
     </div>
-    <h2 class="white">Awaiting confirmation</h2>
+    <h2 class="white" data-ng-bind="reservation.status"></h2>
   </section>
 </div>

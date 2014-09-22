@@ -18,6 +18,11 @@ angular.module('reservations').config(['$stateProvider',
 			url: '/reservations/:reservationId',
 			templateUrl: 'modules/reservations/views/view-reservation.client.view.html'
 		}).
+		state('statusReservation', {
+			url: '/reservations/:reservationId/status',
+			templateUrl: 'modules/reservations/views/status-reservation.client.view.html',
+			controller: 'ReservationsController'
+		}).
 		state('payReservation', {
 			url: '/reservations/:reservationId/pay',
 			templateUrl: 'modules/reservations/views/pay-reservation.client.view.html'
