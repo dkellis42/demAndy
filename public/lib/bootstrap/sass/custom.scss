@@ -40,8 +40,10 @@ table {
       background: $tealtrans;
     }
     &:nth-child(odd){
-      background: $orangetrans;
     }
+  }
+  td, th {
+    padding: 0.5em;
   }
 }
 .white {

@@ -8076,17 +8076,17 @@ table {
 table tr:nth-child(even) {
   background: rgba(22, 144, 142, 0.6);
 }
-/* line 42, ../../sass/custom.scss */
-table tr:nth-child(odd) {
-  background: rgba(255, 81, 0, 0.4);
+/* line 45, ../../sass/custom.scss */
+table td, table th {
+  padding: 0.5em;
 }
 
-/* line 47, ../../sass/custom.scss */
+/* line 49, ../../sass/custom.scss */
 .white {
   color: #fff !important;
 }
 
-/* line 50, ../../sass/custom.scss */
+/* line 52, ../../sass/custom.scss */
 .content {
   padding-top: 4rem;
   padding-bottom: 1rem;
@@ -8095,18 +8095,18 @@ table tr:nth-child(odd) {
   min-height: 550px;
 }
 
-/* line 57, ../../sass/custom.scss */
+/* line 59, ../../sass/custom.scss */
 .row {
   padding-bottom: 2rem;
 }
 
-/* line 60, ../../sass/custom.scss */
+/* line 62, ../../sass/custom.scss */
 .popcorn {
   border-image: url("../images/popcorn.png") 150 0 0 round;
   border-top: 42px !important;
 }
 
-/* line 64, ../../sass/custom.scss */
+/* line 66, ../../sass/custom.scss */
 header {
   background: url("../images/5.jpg");
   background-attachment: fixed;
@@ -8115,7 +8115,7 @@ header {
   padding-bottom: 2em;
 }
 
-/* line 71, ../../sass/custom.scss */
+/* line 73, ../../sass/custom.scss */
 .social-login a [class*="entypo-"] {
   height: 5rem;
   font-size: 3rem;
@@ -8128,23 +8128,23 @@ header {
   border-radius: 100%;
   transition: all .5s ease-in-out;
 }
-/* line 82, ../../sass/custom.scss */
+/* line 84, ../../sass/custom.scss */
 .social-login a [class*="entypo-"]:hover {
   color: transparent;
   text-shadow: 0 0 3px #fff;
 }
 
-/* line 88, ../../sass/custom.scss */
+/* line 90, ../../sass/custom.scss */
 .signin button {
   background: none;
   border: none;
 }
-/* line 92, ../../sass/custom.scss */
+/* line 94, ../../sass/custom.scss */
 .signin small {
   color: white;
 }
 
-/* line 96, ../../sass/custom.scss */
+/* line 98, ../../sass/custom.scss */
 input {
   background: none !important;
   border: 1px solid #16908e;
@@ -8154,66 +8154,66 @@ input {
   font-size: 2rem;
   margin: 1rem 0;
 }
-/* line 104, ../../sass/custom.scss */
+/* line 106, ../../sass/custom.scss */
 input:focus {
   outline: none;
 }
 
-/* line 108, ../../sass/custom.scss */
+/* line 110, ../../sass/custom.scss */
 ::-webkit-input-placeholder {
   color: #ddd;
 }
 
-/* line 111, ../../sass/custom.scss */
+/* line 113, ../../sass/custom.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: #ddd;
 }
 
-/* line 114, ../../sass/custom.scss */
+/* line 116, ../../sass/custom.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #ddd;
 }
 
-/* line 117, ../../sass/custom.scss */
+/* line 119, ../../sass/custom.scss */
 :-ms-input-placeholder {
   color: #ddd;
 }
 
-/* line 120, ../../sass/custom.scss */
+/* line 122, ../../sass/custom.scss */
 h1, h1:hover, h1 a:hover, h1 a, h1:hover a, h1 a:hover a {
   font-family: 'Ostrich Bold', sans;
   color: #16908e !important;
   text-transform: uppercase;
 }
 
-/* line 128, ../../sass/custom.scss */
+/* line 130, ../../sass/custom.scss */
 h2, h2 a:hover, h2 a a:hover, h2 a, h2 a:hover a {
   font-family: 'Ostrich Heavy', sans;
   color: white !important;
   text-transform: uppercase;
 }
-/* line 133, ../../sass/custom.scss */
+/* line 135, ../../sass/custom.scss */
 h2 a, h2 a:hover a, h2 a a, h2 a:hover a a {
   transition: all .2s ease-in-out;
 }
-/* line 135, ../../sass/custom.scss */
+/* line 137, ../../sass/custom.scss */
 h2 a:hover, h2 a a:hover a:hover, h2 a a:hover {
   transform: scale(1.2);
 }
 
-/* line 141, ../../sass/custom.scss */
+/* line 143, ../../sass/custom.scss */
 nav {
   background: #ff5100 !important;
 }
-/* line 144, ../../sass/custom.scss */
+/* line 146, ../../sass/custom.scss */
 nav li a {
   color: white;
   text-shadow: none;
 }
 
-/* line 150, ../../sass/custom.scss */
+/* line 152, ../../sass/custom.scss */
 #login {
   width: 86%;
   position: absolute;
@@ -8224,25 +8224,25 @@ nav li a {
   padding-top: 16%;
   color: #16908e !important;
 }
-/* line 159, ../../sass/custom.scss */
+/* line 161, ../../sass/custom.scss */
 #login h2, #login h2 a:hover, h2 #login a:hover {
   margin-top: 0;
   margin-bottom: .5rem;
   font-size: 28px;
   color: #16908e !important;
 }
-/* line 164, ../../sass/custom.scss */
+/* line 166, ../../sass/custom.scss */
 #login h2 small, h2 #login a:hover small {
   display: block;
   width: 100%;
   float: left;
   color: #16908e !important;
 }
-/* line 171, ../../sass/custom.scss */
+/* line 173, ../../sass/custom.scss */
 #login div {
   padding-top: 0 !important;
 }
-/* line 174, ../../sass/custom.scss */
+/* line 176, ../../sass/custom.scss */
 #login button {
   background: none;
   box-shadow: none;
@@ -8251,11 +8251,11 @@ nav li a {
   font-weight: lighter;
 }
 
-/* line 182, ../../sass/custom.scss */
+/* line 184, ../../sass/custom.scss */
 #reserve {
   display: none;
 }
-/* line 184, ../../sass/custom.scss */
+/* line 186, ../../sass/custom.scss */
 #reserve input[type="text"] {
   background: none !important;
   border: 1px solid #ddd;
@@ -8265,17 +8265,17 @@ nav li a {
   font-size: 2rem;
   margin: 1rem 0;
 }
-/* line 193, ../../sass/custom.scss */
+/* line 195, ../../sass/custom.scss */
 #reserve li {
   margin-bottom: 1rem;
   display: inline-block;
   width: 100%;
 }
-/* line 198, ../../sass/custom.scss */
+/* line 200, ../../sass/custom.scss */
 #reserve h3 {
   color: #444;
 }
-/* line 200, ../../sass/custom.scss */
+/* line 202, ../../sass/custom.scss */
 #reserve h3 small {
   font-size: 1.7rem;
   font-weight: lighter;
@@ -8284,26 +8284,26 @@ nav li a {
   letter-spacing: 1px;
 }
 
-/* line 210, ../../sass/custom.scss */
+/* line 212, ../../sass/custom.scss */
 .popcorn-picker label {
   text-align: center;
   margin: 3rem 0;
 }
-/* line 213, ../../sass/custom.scss */
+/* line 215, ../../sass/custom.scss */
 .popcorn-picker label img {
   max-width: 80px;
   transition: all .2s ease-in-out;
 }
-/* line 221, ../../sass/custom.scss */
+/* line 223, ../../sass/custom.scss */
 .popcorn-picker input[type="radio"] {
   display: none;
 }
-/* line 223, ../../sass/custom.scss */
+/* line 225, ../../sass/custom.scss */
 .popcorn-picker input[type="radio"]:checked + img {
   animation: pop .5s ease;
 }
 
-/* line 229, ../../sass/custom.scss */
+/* line 231, ../../sass/custom.scss */
 .reservation input[type="text"] {
   border: 0;
   border-bottom: 3px solid #16908e;
@@ -8313,7 +8313,7 @@ nav li a {
 /**************
 Rolling Circle
 ***************/
-/* line 238, ../../sass/custom.scss */
+/* line 240, ../../sass/custom.scss */
 .circle-container {
   width: 100%;
   height: 100%;
@@ -8323,7 +8323,7 @@ Rolling Circle
   transform-style: preserve-3d;
 }
 
-/* line 246, ../../sass/custom.scss */
+/* line 248, ../../sass/custom.scss */
 .circle-text {
   width: 50%;
   margin: 0 auto;
@@ -8331,7 +8331,7 @@ Rolling Circle
   left: 0;
   right: 0;
 }
-/* line 252, ../../sass/custom.scss */
+/* line 254, ../../sass/custom.scss */
 .circle-text:after {
   content: "";
   display: block;
@@ -8343,7 +8343,7 @@ Rolling Circle
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 263, ../../sass/custom.scss */
+/* line 265, ../../sass/custom.scss */
 .circle-text div {
   float: left;
   width: 100%;
@@ -8352,12 +8352,12 @@ Rolling Circle
   text-align: center;
   color: white;
 }
-/* line 271, ../../sass/custom.scss */
+/* line 273, ../../sass/custom.scss */
 .circle-text div a {
   color: white;
   text-decoration: none;
 }
-/* line 276, ../../sass/custom.scss */
+/* line 278, ../../sass/custom.scss */
 .circle-text.top {
   -webkit-transform: translateZ(10em);
   -moz-transform: translateZ(10em);
@@ -8365,7 +8365,7 @@ Rolling Circle
   transform: translateZ(10em);
   position: absolute;
 }
-/* line 282, ../../sass/custom.scss */
+/* line 284, ../../sass/custom.scss */
 .circle-text.top.roll-add {
   -webkit-animation: roll 3s ease;
   -moz-animation: roll 3s ease;
@@ -8373,128 +8373,128 @@ Rolling Circle
   animation: roll 3s ease;
   transform: translateZ(10em) translateX(90%) rotate(100deg) !important;
 }
-/* line 290, ../../sass/custom.scss */
+/* line 292, ../../sass/custom.scss */
 .circle-text.bottom {
   position: absolute;
   padding-top: 0;
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(0) {
   -webkit-transform: translateZ(9em) translateX(1em);
   -moz-transform: translateZ(9em) translateX(1em);
   -o-transform: translateZ(9em) translateX(1em);
   transform: translateZ(9em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(1) {
   -webkit-transform: translateZ(8em) translateX(1em);
   -moz-transform: translateZ(8em) translateX(1em);
   -o-transform: translateZ(8em) translateX(1em);
   transform: translateZ(8em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(2) {
   -webkit-transform: translateZ(7em) translateX(1em);
   -moz-transform: translateZ(7em) translateX(1em);
   -o-transform: translateZ(7em) translateX(1em);
   transform: translateZ(7em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(3) {
   -webkit-transform: translateZ(6em) translateX(1em);
   -moz-transform: translateZ(6em) translateX(1em);
   -o-transform: translateZ(6em) translateX(1em);
   transform: translateZ(6em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(4) {
   -webkit-transform: translateZ(5em) translateX(1em);
   -moz-transform: translateZ(5em) translateX(1em);
   -o-transform: translateZ(5em) translateX(1em);
   transform: translateZ(5em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(5) {
   -webkit-transform: translateZ(4em) translateX(1em);
   -moz-transform: translateZ(4em) translateX(1em);
   -o-transform: translateZ(4em) translateX(1em);
   transform: translateZ(4em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(6) {
   -webkit-transform: translateZ(3em) translateX(1em);
   -moz-transform: translateZ(3em) translateX(1em);
   -o-transform: translateZ(3em) translateX(1em);
   transform: translateZ(3em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(7) {
   -webkit-transform: translateZ(2em) translateX(1em);
   -moz-transform: translateZ(2em) translateX(1em);
   -o-transform: translateZ(2em) translateX(1em);
   transform: translateZ(2em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(8) {
   -webkit-transform: translateZ(1em) translateX(1em);
   -moz-transform: translateZ(1em) translateX(1em);
   -o-transform: translateZ(1em) translateX(1em);
   transform: translateZ(1em) translateX(1em);
 }
-/* line 296, ../../sass/custom.scss */
+/* line 298, ../../sass/custom.scss */
 .circle-text.bottom:nth-child(9) {
   -webkit-transform: translateZ(0em) translateX(1em);
   -moz-transform: translateZ(0em) translateX(1em);
   -o-transform: translateZ(0em) translateX(1em);
   transform: translateZ(0em) translateX(1em);
 }
-/* line 304, ../../sass/custom.scss */
+/* line 306, ../../sass/custom.scss */
 .circle-text.bottom.status h1, .circle-text.bottom.status h1 a:hover, h1 .circle-text.bottom.status a:hover {
   line-height: .8rem;
 }
-/* line 307, ../../sass/custom.scss */
+/* line 309, ../../sass/custom.scss */
 .circle-text.bottom.status div {
   padding-top: 0 !important;
 }
-/* line 310, ../../sass/custom.scss */
+/* line 312, ../../sass/custom.scss */
 .circle-text.bottom.status h2, .circle-text.bottom.status h2 a:hover, h2 .circle-text.bottom.status a:hover {
   letter-spacing: 1px;
 }
-/* line 314, ../../sass/custom.scss */
+/* line 316, ../../sass/custom.scss */
 .circle-text.bottom .small {
   width: 20%;
   padding-top: 0 !important;
   margin-right: 4.5%;
   margin-bottom: 5%;
 }
-/* line 319, ../../sass/custom.scss */
+/* line 321, ../../sass/custom.scss */
 .circle-text.bottom .small.unpopped:after {
   background: url("../../../../modules/core/img/kernel.png") no-repeat #16908e;
   background-size: 80%;
   background-position: center;
 }
-/* line 324, ../../sass/custom.scss */
+/* line 326, ../../sass/custom.scss */
 .circle-text.bottom .small.popped:after {
   background: url("../../../../modules/core/img/popcorn.png") no-repeat #16908e;
   background-size: 80%;
   background-position: center;
 }
-/* line 330, ../../sass/custom.scss */
+/* line 332, ../../sass/custom.scss */
 .circle-text.bottom.login:after {
   background: rgba(255, 81, 0, 0.4) !important;
 }
-/* line 331, ../../sass/custom.scss */
+/* line 333, ../../sass/custom.scss */
 .circle-text.bottom.roll-add {
   -webkit-animation: rollout 3s ease forwards;
   -moz-animation: rollout 3s ease forwards;
   -o-animation: rollout 3s ease forwards;
   animation: rollout 3s ease forwards;
 }
-/* line 338, ../../sass/custom.scss */
+/* line 340, ../../sass/custom.scss */
 .circle-text.bottom:after {
   background: #ff5100 !important;
 }
-/* line 339, ../../sass/custom.scss */
+/* line 341, ../../sass/custom.scss */
 .circle-text.bottom section {
   width: 86%;
   position: absolute;
@@ -8505,14 +8505,14 @@ Rolling Circle
   padding-top: 16%;
   color: #16908e !important;
 }
-/* line 348, ../../sass/custom.scss */
+/* line 350, ../../sass/custom.scss */
 .circle-text.bottom section h2, .circle-text.bottom section h2 a:hover, h2 .circle-text.bottom section a:hover {
   margin-top: 0;
   margin-bottom: .5rem;
   font-size: 28px;
   color: #16908e;
 }
-/* line 353, ../../sass/custom.scss */
+/* line 355, ../../sass/custom.scss */
 .circle-text.bottom section h2 small, h2 .circle-text.bottom section a:hover small {
   display: block;
   width: 100%;
@@ -8520,7 +8520,7 @@ Rolling Circle
   color: #16908e;
 }
 
-/* line 363, ../../sass/custom.scss */
+/* line 365, ../../sass/custom.scss */
 #map-canvas {
   height: 400px;
   width: 100%;
